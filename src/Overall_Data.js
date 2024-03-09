@@ -6,10 +6,18 @@ const StudentDetailsPage = () => {
   const [selectedStudent, setSelectedStudent] = useState(null);
 
   const studentData = [
-    { name: 'Student 1', emotionOverall: 'Happy', emotionAudio: 'Happy', emotionText: 'Excited', emotionVideo: 'Calm' },
-    { name: 'Student 2', emotionOverall: 'Happy', emotionAudio: 'Sad', emotionText: 'Confused', emotionVideo: 'Surprised' },
+    { name: 'Student 1', emotionOverall: 'Happy', emotionAudio: 'Happy', emotionText: 'Surprised', emotionVideo: 'Happy' },
+    { name: 'Student 2', emotionOverall: 'Happy', emotionAudio: 'Absent', emotionText: 'Confused', emotionVideo: 'Surprised' },
     { name: 'Student 3', emotionOverall: 'Happy', emotionAudio: 'Confused', emotionText: 'Happy', emotionVideo: 'Bored' },
   ];
+
+  const emotionColorMap = {
+    Happy: 'rgba(56, 142, 60, 255)',
+    Surprised: 'rgba(25, 118, 210, 255)',
+    Confused: 'rgba(211, 47, 47, 255)',
+    Bored: 'rgba(251, 192, 45, 255)',
+    Absent: 'rgba(3, 169, 244, 255)',
+  };
 
   const handleStudentClick = (name) => {
     setSelectedStudent((prevSelected) => (prevSelected === name ? null : name));
@@ -25,12 +33,20 @@ const StudentDetailsPage = () => {
           onClick={() => handleStudentClick(student.name)}
         >
           <p>Name: {student.name}</p>
-          <p>Overall Emotion: {student.emotionOverall}</p>
+          <p>
+            Overall Emotion: <span style={{ color: emotionColorMap[student.emotionOverall] }}>{student.emotionOverall}</span>
+          </p>
           {selectedStudent === student.name && (
             <div className="student-details">
-              <p>Emotion (Audio): {student.emotionAudio}</p>
-              <p>Emotion (Text): {student.emotionText}</p>
-              <p>Emotion (Video): {student.emotionVideo}</p>
+              <p>
+                Emotion (Audio): <span style={{ color: emotionColorMap[student.emotionAudio] }}>{student.emotionAudio}</span>
+              </p>
+              <p>
+                Emotion (Text): <span style={{ color: emotionColorMap[student.emotionText] }}>{student.emotionText}</span>
+              </p>
+              <p>
+                Emotion (Video): <span style={{ color: emotionColorMap[student.emotionVideo] }}>{student.emotionVideo}</span>
+              </p>
             </div>
           )}
         </div>
