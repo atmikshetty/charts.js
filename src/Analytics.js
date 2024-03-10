@@ -1,13 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { Pie, Bar } from "react-chartjs-2";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import "chart.js/auto";
 import "./Analytics.css"; // Assuming you have a CSS file
 import StudentDetailsPage from "./Overall_Data";
 
 const Analytics = () => {
-  // const navigate = useNavigate();
-
   const [selectedStudent, setSelectedStudent] = useState(null);
 
   const studentData = [
@@ -36,7 +35,6 @@ const Analytics = () => {
 
   const handleChartClick = () => {
     // Your existing code...
-
     // Set selected student data when a chart is clicked
     // For demonstration purposes, setting the first student's data
     setSelectedStudent(studentData[0]);
@@ -49,16 +47,16 @@ const Analytics = () => {
         label: "Analytics Data",
         data: [10, 20, 20, 25, 25],
         backgroundColor: [
-          "rgba(56, 142, 60, 255)",    
-          "rgba(25,118,210,255)",     
-          "rgba(211,47,47,255)",    
+          "rgba(56, 142, 60, 255)",
+          "rgba(25,118,210,255)",
+          "rgba(211,47,47,255)",
           "rgba(251,192,45,255)",
           "rgba(3,169,244,255)",
         ],
         borderColor: [
-          "rgba(56, 142, 60, 255)",    
-          "rgba(25,118,210,255)",     
-          "rgba(211,47,47,255)",    
+          "rgba(56, 142, 60, 255)",
+          "rgba(25,118,210,255)",
+          "rgba(211,47,47,255)",
           "rgba(251,192,45,255)",
           "rgba(3,169,244,255)",
         ],
@@ -74,16 +72,16 @@ const Analytics = () => {
         label: "Analytics Data",
         data: [10, 20, 20, 25, 25],
         backgroundColor: [
-          "rgba(56, 142, 60, 255)",    
-          "rgba(25,118,210,255)",     
-          "rgba(211,47,47,255)",    
+          "rgba(56, 142, 60, 255)",
+          "rgba(25,118,210,255)",
+          "rgba(211,47,47,255)",
           "rgba(251,192,45,255)",
           "rgba(3,169,244,255)",
         ],
         borderColor: [
-          "rgba(56, 142, 60, 255)",    
-          "rgba(25,118,210,255)",     
-          "rgba(211,47,47,255)",    
+          "rgba(56, 142, 60, 255)",
+          "rgba(25,118,210,255)",
+          "rgba(211,47,47,255)",
           "rgba(251,192,45,255)",
           "rgba(3,169,244,255)",
         ],
@@ -99,20 +97,20 @@ const Analytics = () => {
         label: "Analytics Data",
         data: [10, 20, 20, 25, 25],
         backgroundColor: [
-          "rgba(56, 142, 60, 255)",    
-          "rgba(25,118,210,255)",     
-          "rgba(211,47,47,255)",    
+          "rgba(56, 142, 60, 255)",
+          "rgba(25,118,210,255)",
+          "rgba(211,47,47,255)",
           "rgba(251,192,45,255)",
           "rgba(3,169,244,255)",
         ],
         borderColor: [
-          "rgba(56, 142, 60, 255)",    
-          "rgba(25,118,210,255)",     
-          "rgba(211,47,47,255)",    
+          "rgba(56, 142, 60, 255)",
+          "rgba(25,118,210,255)",
+          "rgba(211,47,47,255)",
           "rgba(251,192,45,255)",
           "rgba(3,169,244,255)",
         ],
-        
+
         borderWidth: 1,
       },
     ],
@@ -125,16 +123,16 @@ const Analytics = () => {
         label: "Analytics Data",
         data: [10, 20, 20, 25, 25],
         backgroundColor: [
-          "rgba(56, 142, 60, 255)",    
-          "rgba(25,118,210,255)",     
-          "rgba(211,47,47,255)",    
+          "rgba(56, 142, 60, 255)",
+          "rgba(25,118,210,255)",
+          "rgba(211,47,47,255)",
           "rgba(251,192,45,255)",
           "rgba(3,169,244,255)",
         ],
         borderColor: [
-          "rgba(56, 142, 60, 255)",    
-          "rgba(25,118,210,255)",     
-          "rgba(211,47,47,255)",    
+          "rgba(56, 142, 60, 255)",
+          "rgba(25,118,210,255)",
+          "rgba(211,47,47,255)",
           "rgba(251,192,45,255)",
           "rgba(3,169,244,255)",
         ],
@@ -153,8 +151,6 @@ const Analytics = () => {
         },
       ],
     },
-    // maintainAspectRatio: false,
-    // responsive: true,
   };
 
   return (
@@ -199,6 +195,10 @@ const Analytics = () => {
 
       <div className="overall-data">
         <StudentDetailsPage />
+      </div>
+      
+      <div className="teacher-analytics">
+        <Link to="/teacher">Go to Teacher Analytics</Link>
       </div>
     </div>
   );
